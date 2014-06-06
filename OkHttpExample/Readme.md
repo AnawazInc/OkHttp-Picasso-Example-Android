@@ -1,26 +1,37 @@
-## OkHttp Android Example
+OkHttp-2.0.0-RC1, otto-1.3.4 and picasso-2.3.1 Example Android
+==============================
 
-This is a simple example of implementing [Square's OkHttp library](https://github.com/square/okhttp) in an Android app
+okhttp-2.0.0-RC1 , okhttp-urlconnection-2.0.0-RC1 , okio-1.0.0 , otto-1.3.4 , picasso-2.3.1 example android
 
-[Full write-up is here.](http://www.recursiverobot.com/post/48782017564/trying-out-squares-okhttp-client)
+This is a simple example of implementing [Square's libraries (OkHttp,Otto,Picasso)](https://github.com/square/) in an Android app [Full write-up is here.](http://www.anawaz.com/)
 
-### OkHttp
+###OkHttp
+HTTP is the way modern applications network. It’s how we exchange data & media. Doing HTTP efficiently makes your stuff load faster and saves bandwidth.
 
-Step zero is getting OkHttp either as a jar, or pulling down the project and building a jar with maven. When I built this, the jar was not available, so I needed to build it myself. This was quite simple, all you need to do is make sure you have Maven2 installed, and follow the instructions on OkHttp's github page.
+OkHttp is an HTTP client that’s efficient by default:
 
-One thing to note is that you need to be building against the parent project, not just the okhttp dir. Sometimes people package up git repos such that there are actually multiple projects in a single repo, and you only need to use one of the dirs in the project. In this case, you need the parent, it will build the child projects for you. 
+SPDY support allows all requests to the same host to share a socket. Connection pooling reduces request latency (if SPDY isn’t available). Transparent GZIP shrinks download sizes. Response caching avoids the network completely for repeat requests. OkHttp perseveres when the network is troublesome: it will silently recover from common connection problems. If your service has multiple IP addresses OkHttp will attempt alternate addresses if the first connect fails. This is necessary for IPv4+IPv6 and for services hosted in redundant data centers. OkHttp initiates new connections with modern TLS features (SNI, ALPN), and falls back to SSLv3 if the handshake fails.
 
-Building:
+Using OkHttp is easy. Its 2.0 API is designed with fluent builders and immutability. It supports both synchronous blocking calls and async calls with callbacks.
 
-    mvn clean
-    mvn package -DskipTests
+You can try out OkHttp without rewriting your network code. The okhttp-urlconnection module implements the familiar java.net.HttpURLConnection API and the okhttp-apache module implements the Apache HttpClient API.
 
-After you build, the jar will be in okhttp/targets.
+OkHttp supports Android 2.3 and above. For Java, the minimum requirement is 1.6.
 
-This git repo bundles a version of okhttp that I build, but it would be better to pull down a more recent version.
+###Otto
+Otto is an event bus designed to decouple different parts of your application while still allowing them to communicate efficiently.
 
-### Otto
+Forked from Guava, Otto adds unique functionality to an already refined event bus as well as specializing it to the Android platform.
 
-I'm also using Otto here. Check out my [post on Otto](http://www.recursiverobot.com/post/48752686831/playing-around-with-otto-on-android) for a quick primer.
+###Picasso
+Images add much-needed context and visual flair to Android applications. Picasso allows for hassle-free image loading in your application—often in one line of code!
+
+`Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);`
+Many common pitfalls of image loading on Android are handled automatically by Picasso:
+
+Handling ImageView recycling and download cancelation in an adapter.
+Complex image transformations with minimal memory use.
+Automatic memory and disk caching.
+
 
 
