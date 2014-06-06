@@ -3,9 +3,9 @@ OkHttp-2.0.0-RC1, otto-1.3.4 and picasso-2.3.1 Example Android
 
 okhttp-2.0.0-RC1 , okhttp-urlconnection-2.0.0-RC1 , okio-1.0.0 , otto-1.3.4 , picasso-2.3.1 example android
 
-This is a simple example of implementing [Square's libraries (OkHttp-2.0.0-RC1 , OkHttp-urlconnection-2.0.0-RC1 , okio-1.0.0 , otto-1.3.4 , picasso-2.3.1 )](https://github.com/square/) in an Android app [Full write-up is here.](http://www.anawaz.com/)
+This is a simple example of implementing [Square's libraries (OkHttp,Otto,Picasso)](https://github.com/square/) in an Android app [Full write-up is here.](http://www.anawaz.com/)
 
-##OkHttp
+###OkHttp
 HTTP is the way modern applications network. It’s how we exchange data & media. Doing HTTP efficiently makes your stuff load faster and saves bandwidth.
 
 OkHttp is an HTTP client that’s efficient by default:
@@ -18,15 +18,16 @@ You can try out OkHttp without rewriting your network code. The okhttp-urlconnec
 
 OkHttp supports Android 2.3 and above. For Java, the minimum requirement is 1.6.
 
-##Otto
+###Otto
 Otto is an event bus designed to decouple different parts of your application while still allowing them to communicate efficiently.
 
 Forked from Guava, Otto adds unique functionality to an already refined event bus as well as specializing it to the Android platform.
 
-##Picasso
+###Picasso
 Images add much-needed context and visual flair to Android applications. Picasso allows for hassle-free image loading in your application—often in one line of code!
 
 `Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);`
+
 Many common pitfalls of image loading on Android are handled automatically by Picasso:
 
 Handling ImageView recycling and download cancelation in an adapter.
